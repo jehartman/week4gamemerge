@@ -1,0 +1,176 @@
+body {
+ background-image: url("../images/parchment.png");
+ background-size: cover;
+ font-family: 'Roboto', sans-serif;
+ font-size: 14px;
+   color: #414237;
+}
+
+div {
+  width: 80%;
+  margin: 10px auto;
+}
+
+
+h1 {
+  font-family: 'Bahiana', cursive;
+  color: #6d6e5c;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #eef1c9;
+  padding: 10px 0;
+  margin: 20px auto 20px auto;
+  width: 80%;
+  opacity: .8;
+}
+
+#start {
+  font-family: 'Bahiana', cursive;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin: 10px auto;
+
+}
+
+p {
+  margin-top: 7px;
+}
+
+table, td, tr {
+  float: left;
+  font-family: 'Bahiana', cursive;
+  font-size: 1.2em;
+  padding: 10px;
+
+}
+
+#instructions {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 30px;
+  column-count: 2;
+  width: 80%;
+  margin: 0 auto 10px;
+  padding: 20px;
+  line-height: 1.4em;
+
+  background-color: #eef1c9;
+  opacity: .8;
+}
+
+#consoleLeft {
+  margin: 10px 2% 24px 0;
+  box-sizing: border-box;
+  float: left;
+  width: 55%;
+  background-color: #eef1c9;
+
+  /*opacity: .3;*/
+}
+
+
+.scoreBox {
+  font-family: 'Bahiana', cursive;
+  font-size: 1.5em;
+  color: #2b2c24;
+  background-color: #eef1c9;
+  float: left;
+  margin: 0 10px 10px 10px;
+  opacity: .8;
+}
+
+#consoleRight {
+
+  margin-top: 10px;
+  box-sizing: border-box;
+  float: left;
+  width: 43%;
+}
+
+#market {
+  float: left;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#snarkBox {
+  padding: 20px;
+  font-family: 'Bahiana', cursive;
+  font-size: 1.3em;
+  color: #2b2c24;
+  background-color: #eef1c9;
+  float: left;
+  display: block;
+  width: 100%;
+  height: 350px;
+  opacity: .8;
+  overflow: auto;
+}
+
+}
+#gameConsole {
+  width: 80%;
+  margin: 0 auto 800px;
+}
+
+
+}
+
+.coin {
+  padding: 10px;
+}
+
+#randomCoin td {
+  height: 75px;
+  width: 75px;
+}
+
+/*#endTile {
+  text-align: center;
+  position: relative;
+  background-color: red;
+  color: white;
+  height: 700px;
+  font-size: 2em;
+  z-index: -1;
+
+}
+
+#playAgain {
+  color: red;
+}*/
+
+#endTile {
+  width: 15%;
+  height: 50%;
+  background-color: red;
+  font-size: 1em;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  margin: auto;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.5em;
+}
+
+#playAgain {
+  width: 80%;
+  height: 20%;
+  background-color: white;
+  font-size: .8em !important;
+/*  position: absolute;*/
+ /* top: 300px;
+  right: 10%;*/
+  margin: 50px auto;
+}
+
+li {
+  color: lightgrey;
+}
+
+li:first-child {
+  color: red !important;
+}

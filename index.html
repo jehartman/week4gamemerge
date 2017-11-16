@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Bahiana|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <title>Bargain Hunter</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <header>
+      <h1 class="banner">Shopper's Dilemma</h1>
+    </header>
+
+    <div id="instructions">
+
+      <p>You're in a strange new country. You have a pocket full of coins but you have no idea what their values are. You need to buy some items from the local merchant, but you don't speak the language and he doesn't give change. The goal of this game is to make purchases without getting ripped off.</p>
+
+      <p>The game starts with a random item and price in the checkout box. Below the box are four mystery coins from your pocket. Each coin has a randomly assigned value between $1 and $12. </p>
+
+      <p>Every time you click a coin, the value of that coin is added to the checkout box. You can determine the value of each coin by noting the increase in the checkout box.</p>
+
+      <p>The goal of the game is to make exact purchases without getting ripped off. If your checkout price exactly matches the price of the item, you win. If you go over, you get ripped off and lose.</p>
+
+    </div>
+    <div id="gameConsole">
+      <div id="consoleLeft">
+        <div>
+          <button type="button" class="btn btn-success" id="start">Click Here to Buy an Item</button>
+        </div>
+          <table class="scoreBox">
+              <tr>
+                  <td><img id="itemPic" src="assets/images/placeholder.png" height="40" width="40"></td>
+                  <td><span>ITEM PRICE: </span></td>
+              </tr>
+              <tr>
+                <td><span id="randItemPrice"></span></td>
+              </tr>
+            </table>
+
+        <table class="scoreBox">
+          <tr id="coinRow">
+            <td>
+              <div value="0" id="coin0">
+                <img class="coin" src="assets/images/coin1.png" height="70" width="70" value="0">
+              </div>
+            </td>
+            <td>
+              <div value="1" valueid="coin1">
+                <img class="coin" src="assets/images/coin2.png" height="70" width="70" value="1">
+              </div>
+            </td>
+            <td>
+              <div value="2" id="coin2">
+                <img class="coin" src="assets/images/coin3.png" height="70" width="70"  value="2">
+              </div>
+            </td>
+            <td>
+              <div value="3" id="coin3">
+                <img class="coin" src="assets/images/coin4.png" height="70" width="70"  value="3">
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="scoreBox">
+          <tr>
+            <td>Your current cash offer:</td>
+          </tr>
+          <tr>
+            <td id="offer"></td>
+          </tr>
+        </table>
+        <table class="scoreBox">
+          <tr>
+            <td>WINS: </td>
+            <td><span id="wins">0</span></td>
+          </tr>
+          <tr>
+            <td>RIPOFFS: </td>
+            <td><span id="ripOffs">0</span></td>
+          </tr>
+        </table>
+      </div>
+      <div id="consoleRight">
+            <img id="market" src="assets/images/chinesemarket2.png" alt="Image of Market">
+
+            <div>
+              <ul id="snarkBox"></ul>
+
+            </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+$(document).ready(function() {
+
+  //when you lose you get ripped off, so this is a loss counter
+  var ripOffs = 0;
+  var wins = 0;
+  //actual price of the item
+  var targetPrice = 0;
+  //the total of your current coin offers
+  var currentOffer = 0;
+  //string that holds the name of the selected item ??
+  var selectedItemImage = "";
+  //holds the price of the selected item
+  var selectedItemPrice = 0;
+  //array of coin names and values
+  var coins = [{
+      name: "coin1",
+      value: 0
+    },
+    {
+      name: "coin2",
+      value: 0
+    },
+    {
+      name: "coin3",
+      value: 0
+    },
+    {
+      name: "coin4",
+      value: 0
+    },
+  ];
+
+  console.log(coins.length);
+
+  // function findCoinValue (coins, array) {
+  function findCoinValue(coin1, coins) {
+    //loop through array with for loop
+    //coins[0].name , for each position [i] compare name to name entered in function parameter
+    //if match, get value coin[i].value
+    //add coin[i] value to currentOffer
+    for (var i = 0; i < 4; i++) {
+      if (coins[i].name === "coin1") {
+        coin1.value = (Math.floor((Math.random() * 12) + 1));
+        console.log("coin 1 " + coin1.value);
+        currentOffer = currentOffer + coin1.value;
+        console.log("offer now " + currentOffer);
+      } else if (coins[i].name === "coin2") {
+        coin2.value = (Math.floor((Math.random() * 12) + 1));
+        console.log("coin 2 " + coin2.value);
+        currentOffer = currentOffer + coin2.value;
+        console.log("offer now " + currentOffer);
+      } else if (coins[i].name === "coin3") {
+        coin3.value = (Math.floor((Math.random() * 12) + 1));
+        console.log("coin 3 " + coin3.value);
+        currentOffer = currentOffer + coin3.value;
+        console.log("offer now " + currentOffer);
+      } else {
+        coin4.value = (Math.floor((Math.random() * 12) + 1));
+        console.log("coin 4 " + coin4.value);
+        currentOffer = currentOffer + coin4.value;
+        console.log("offer now " + currentOffer);
+      }
+    }
+}
+
+findCoinValue (coin1, coins);
+
+  // findCoinValue(coin1, coins);
+  //compare value to currentOffer
+  function compareToItemPrice() {
+      if (currentOffer > targetPrice) {
+        ripOffs = ripOffs + 1;
+        $("#ripOffs").text(ripOffs);
+        alert("The merchant smiles and takes your money.");
+        resetGame();
+      } else if (currentOffer < targetPrice) {
+        $("#offer").text(currentOffer);
+        alert("The merchant shakes his head and taps the price tag.");
+      } else {
+        wins = wins + 1;
+        $("#wins").text(wins);
+        alert("The merchant impassively accepts your money and bags your item.");
+        resetGame();
+      }
+    }
+
+  function resetGame() {
+      var targetPrice = 0;
+      var currentOffer = 0;
+    }
+
+//repeat find coin value with every button click
+//find obj with id in array of objects
+
+$("#start").on("click", function() {
+  var targetPrice = (Math.floor((Math.random() * 102) + 19));
+  //this calls the id number to guess and pushes its value in text to targetNumber
+  $("#randItemPrice").text(targetPrice);
+});
+
+$("#coin1").on("click", function() {
+  findCoinValue (coin1, coins);
+  compareToItemPrice ();
+
+});
+
+$("#coin2").on("click", function() {
+  var valueCoin2 = findCoinValue("coin2", coins);
+  // currentOffer = currentOffer + valueCoin2;
+  compareToItemPrice();
+});
+
+$("#coin3").on("click", function() {
+  var valueCoin3 = findCoinValue("coin3", coins);
+  currentOffer = currentOffer + valueCoin1;
+  compareToItemPrice();
+});
+
+$("#coin1").on("click", function() {
+  var valueCoin1 = findCoinValue("coin1", coins);
+  currentOffer = currentOffer + valueCoin1;
+  compareToItemPrice();
+});
+
+// function compareOffers() {
+//   //comparison logic***
+// }
+//
+// function initializeGame() {
+//
+// }
+
+
+
+//SETTING COINS
+//create a function that initializes the game
+//select random image from itemImage array
+//store it in selectedItem variable
+//generating random price and store it selected itemPrice variable
+//create a variable coins , array of objects
+//assign key name value [{name: coin1, value: mathrandom 1-12, image: url}]
+
+//on image click, grab id of clicked image
+//find the value of that coin from coins array
+//add selectedValue to currentOffer
+//compare currentOffer and targetPrice
+//***if co > tp, game ends
+//update ripoffs
+//update html
+//else if co = tp, win the game
+//update wins
+//update html
+//reinitialize game
+
+
+
+
+  // var coinValueArray = [];
+  // //this loops 12 times through the array and pushes 1 through 12 into the array
+  // for (var i = 1; i <= 12; i++) {
+  //   coinValueArray.push(i);
+  //   // console.log(coinValue);
+  // }
+
+});
+
+//************
+//creating an array of the coin images
+
+//this function gets a random value from the array without duplication
+// function shuffle(x) {
+//   var m = x.length;
+//   var t;
+//   var i;
+//   // While there remain elements to shuffle…
+//   while (m) {
+//     // Pick a remaining element…
+//     i = Math.floor(Math.random() * m--);
+//
+//     // And swap it with the current element.
+//     t = x[m];
+//     x[m] = x[i];
+//     x[i] = t;
+//   }
+//   return x;
+
+//now we have a random coin value
+// var itemImage = [{description: "apple", url: "assets/images/apple.png"}, {description: "ham", url:  "assets/images/ham.png"}, {description: "rice", url: "assets/images/rice.png"}, {description: "salt", url:  "assets/images/salt.png"}, {description: "shoelaces", url: "assets/images/shoelaces.png"}, {description: "book", url: "assets/images/book.png"}, {description: "soap", url: "assets/images/soap.png"}];
+//
+// shuffle(itemImage);
+// $("#itemPic").attr("src", itemImage.url);
+
+
+
+
+
+
+
+
+
+// $("").get(3)
+
+// console.log(coinImages:eq(0), coinValue:eq(0));
+
+
+
+// });
+//  var coinIDs = ["coin1", "coin2", "coin3", "coin4"];
+//
+//  shuffle(coinImages);
+//
+//  for (var ci = 1; 1 < coinImages.length; ci++) {
+//      $coinImages.attr("id", "coinIDs");
+//
+// console.log(coinImages);
+
+// var coinImages = $("img").attr.("url");
+
+//
+// coinImages.attr("coin1." )
+
+
+
+
+
+
+
+//setting
+//   var firstOffer = ""; //
+//   var nextOffer = "";
+//   var totalOffer = "";
+//   var wins = 0;
+//   var ripoffs = 0;
+//
+// function pushImage () {
+// $('#coins').prepend("<img src=");
+// assets/images/coin1.png">");
+// }
+//
+// pushImage ();
+//
+// $("#start").on("click", function() {
+//  $("#image").
+// }
